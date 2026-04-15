@@ -26,27 +26,7 @@ Neo B2-Plus is a **high-performance, fully decentralized multi-chain payment gat
 
 ---
 
-## Release Information
-
-> [!NOTE]
-> This repository contains the **production-ready release files** for Neo B2-Plus. For security and optimization reasons, the source code is kept in a private repository. 
-
-This public distribution provides:
-
-- **Obfuscated Binaries**: High-performance binaries for Linux (`neob2plus-linux-amd64`) and Windows (`neob2plus-windows-amd64.exe`).
-- **Deployment Tools**: Scripts and configuration templates to deploy the gateway and smart contracts.
-- **Contract ABIs**: Pre-compiled artifacts for interaction with supported blockchain networks.
-
----
-
 ## Quick Start
-
-### Prerequisites
-
-- **Host OS**: Linux (Amd64) or Windows (Amd64)
-- **Node.js 18+** - For smart contract deployment tools
-- **PostgreSQL 14+** - Database backend
-- **Docker & Docker Compose** - Recommended for production
 
 ### 1. Initialize Configuration
 
@@ -59,44 +39,5 @@ chmod +x neob2plus-linux-amd64
 
 # Windows
 ./neob2plus-windows-amd64.exe --init
-2. Configure EnvironmentEdit the generated .env and config.json files:Set DATABASE_URL to your PostgreSQL instance.Configure networks with your RPC endpoints and contract addresses.3. Deploy Smart Contracts (Optional)If you are setting up a new infrastructure, use the provided scripts to deploy factories and splitters:Bashbash deploy_all.sh --contracts-only
-4. Run the GatewayNative Execution:Bash# Linux
-./neob2plus-linux-amd64
-
-# Windows
-./neob2plus-windows-amd64.exe
-Docker Execution:Bashdocker-compose up -d --build
-ArchitectureSnippet de códigoflowchart TD
-    UI["Frontend\n(Checkout UI - MetaMask/TronLink/Phantom)"]
-    
-    subgraph Gateway ["Neo B2-Plus Gateway"]
-        direction LR
-        API["REST API\n(Gin)"]
-        IDX["Indexer\n(Polling)"]
-        WH["Webhook Dispatcher\n(HMAC + Retry)"]
-    end
-    
-    UI --> Gateway
-    
-    Gateway --> EVM["EVM Chain\n(Polygon/BSC)\n[Factory] & [Splitter]"]
-    Gateway --> SOL["Solana\n(Mainnet)\n[Program] & [Splitter]"]
-    Gateway --> TRON["Tron\n(Mainnet)\n[Factory] & [Splitter]"]
-    
-    style Gateway fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
-Supported NetworksEVM-Compatible ChainsNetworkChain IDFactory AddressEthereum10x...Polygon1370x...BSC560x...Arbitrum421610x...Optimism100x...Base84530x...Non-EVM ChainsChainTypeAPISolanaSPL TokenJSON-RPCTronTRC-20TronGrid APIAPI EndpointsEndpointMethodDescription/api/v1/configGETPublic gateway configuration/api/v1/payPOSTCreate payment intent/api/v1/pay/:id/hashPATCHSubmit transaction hash/api/v1/status/:idGETCheck payment status/api/v1/onboard-merchantPOSTRegister new merchant (admin)/api/v1/payments/:id/verifyGETForce on-chain verification (admin)/healthGETHealth checkBase URL: http://localhost:8080Payment FlowSnippet de códigosequenceDiagram
-    autonumber
-    participant M as Merchant
-    participant G as Gateway
-    participant U as User (Wallet)
-    participant BC as Blockchain
-    
-    M->>G: POST /api/v1/pay (Create payment)
-    G-->>M: Returns EIP-712 signed payload
-    M->>U: Prompts signature in wallet
-    U->>U: Signs transaction
-    U->>G: PATCH /api/v1/pay/:id/hash (Submit tx hash)
-    U->>BC: Broadcasts transaction
-    BC-->>G: Indexer detects PaymentRecorded event
-    G->>M: Webhook sent to merchant (HMAC signature)
-    M->>M: Confirms payment completed
-Security FeaturesEIP-712 Signatures - Tamper-proof payment authorizationHMAC Webhooks - Verified payload integrityCircuit Breakers - Failure isolationRPC Failover - Automatic node switchingRate Limiting - DDoS protectionReorg Detection - Chain reorganization handlingConfigurationSee config.json.example for full configuration reference.Key fields:networks - Array of supported blockchainsauthorizerPrivateKey - Wallet for signing payment intentswebhookSecret - HMAC signing key for webhooksMonitoringPrometheus Metrics - http://localhost:8080/metricsStructured Logging - JSON logs with logrusHealth Checks - http://localhost:8080/healthLicenseMIT License - See LICENSE file
+```
+Em Contrução
