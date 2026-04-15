@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Clones",
+  "sourceName": "contracts/tron/MerchantFactory.sol",
+  "abi": [],
+  "bytecode": "0x6080806040523460175760399081601c823930815050f35b5f80fdfe5f80fdfea2646970667358221220b158a720abbe68a4ae18ea1d8795b257289fbbd50a0435924f85a676cc0311ae64736f6c63430008180033",
+  "deployedBytecode": "0x5f80fdfea2646970667358221220b158a720abbe68a4ae18ea1d8795b257289fbbd50a0435924f85a676cc0311ae64736f6c63430008180033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

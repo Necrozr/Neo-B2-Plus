@@ -1,0 +1,67 @@
+{
+  "serverPort": "8080",
+  "adminApiKey": "sk_live_CHANGE_ME",
+  "webhookSecret": "whsec_CHANGE_ME",
+  "databaseUrl": "postgres://postgres:password@localhost:5432/neob2plus?sslmode=disable",
+  "defaultMerchantWallet": "0xYOUR_DEFAULT_WALLET",
+  "discordWebhookUrl": "",
+  "networks": [
+    {
+      "name": "Polygon",
+      "type": "evm",
+      "networkId": 137,
+      "rpcUrls": [
+        "https://polygon-rpc.com",
+        "https://rpc.ankr.com/polygon"
+      ],
+      "factoryAddress": "0xYOUR_POLYGON_FACTORY"
+    },
+    {
+      "name": "BSC",
+      "type": "evm",
+      "networkId": 56,
+      "rpcUrls": [
+        "https://bsc-dataseed.binance.org",
+        "https://rpc.ankr.com/bsc"
+      ],
+      "factoryAddress": "0xYOUR_BSC_FACTORY"
+    },
+    {
+      "name": "Base",
+      "type": "evm",
+      "networkId": 8453,
+      "rpcUrls": [
+        "https://mainnet.base.org",
+        "https://rpc.ankr.com/base"
+      ],
+      "factoryAddress": "0xYOUR_BASE_FACTORY"
+    },
+    {
+      "name": "Solana",
+      "type": "solana",
+      "networkId": 0,
+      "rpcUrls": [
+        "https://api.mainnet-beta.solana.com"
+      ],
+      "programId": "YOUR_ANCHOR_PROGRAM_ID"
+    },
+    {
+      "name": "Tron",
+      "type": "tron",
+      "networkId": 728126428,
+      "rpcUrls": [
+        "https://api.trongrid.io"
+      ],
+      "tronGridUrl": "https://api.trongrid.io",
+      "tronGridApiKey": "YOUR_TRONGRID_API_KEY",
+      "factoryAddress": "YOUR_TRON_FACTORY_BASE58"
+    }
+  ],
+  "nativeTokenPrices": {
+    "polygon": 0.70,
+    "bsc": 580.0,
+    "base": 3300.0,
+    "solana": 140.0,
+    "tron": 0.12
+  }
+}

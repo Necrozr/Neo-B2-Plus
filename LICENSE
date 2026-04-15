@@ -1,0 +1,28 @@
+SOFTWARE LICENSE AGREEMENT - NEO B2-PLUS GATEWAY
+
+1. GRANT OF LICENSE
+The Developer ("Licensor") hereby grants you ("Licensee" or "Lojista") a non-exclusive, non-transferable, and revocable right to install and use the Neo B2-Plus Gateway software solely for the purpose of processing payment transactions as intended by the software's functional specifications.
+
+2. RESTRICTIONS
+The Licensee is strictly prohibited from:
+(a) Modifying, altering, or creating derivative works based on the software;
+(b) Decompiling, reverse engineering, or disassembling the software;
+(c) Attempting to bypass or interfere with the hardware-level protection (HWID) or any anti-piracy mechanisms embedded in the software;
+(d) Distributing, sublicensing, or selling the software to any third party without express written consent from the Licensor.
+
+3. DISCLAIMER OF WARRANTY & LIMITATION OF LIABILITY
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+IN NO EVENT SHALL THE DEVELOPER OR LICENSOR BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+4. USER RESPONSIBILITY (RESPONSABILIDADE DO LOJISTA)
+The Licensee explicitly acknowledges and agrees that:
+(a) The operation and configuration of the gateway are the sole responsibility of the Licensee/Lojista;
+(b) Any errors, transaction losses, security breaches caused by misconfiguration, or data leakage resulting from improper use of the software are the exclusive responsibility of the Licensee;
+(c) The Licensor shall not be held liable for any financial losses or damages resulting from blockchain network failures, RPC instability, or protocol changes on non-controlled networks.
+
+5. OWNERSHIP
+All rights, title, and interest in and to the software, including all intellectual property rights, remain the exclusive property of the Developer.
+
+---
+By using this software, you agree to be bound by the terms of this License Agreement.

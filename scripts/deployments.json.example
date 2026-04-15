@@ -1,0 +1,48 @@
+{
+  "version": "1.0.0",
+  "networks": {
+    "ethereum": {
+      "chainId": 1,
+      "factory": "",
+      "splitterLogic": "",
+      "deployer": "",
+      "timestamp": ""
+    },
+    "polygon": {
+      "chainId": 137,
+      "factory": "",
+      "splitterLogic": "",
+      "deployer": "",
+      "timestamp": ""
+    },
+    "bsc": {
+      "chainId": 56,
+      "factory": "",
+      "splitterLogic": "",
+      "deployer": "",
+      "timestamp": ""
+    },
+    "base": {
+      "chainId": 8453,
+      "factory": "",
+      "splitterLogic": "",
+      "deployer": "",
+      "timestamp": ""
+    },
+    "tron": {
+      "chainId": 728126428,
+      "factory": "",
+      "splitterLogic": "",
+      "deployer": "",
+      "tronGridUrl": "https://api.trongrid.io",
+      "timestamp": ""
+    },
+    "solana": {
+      "programId": "",
+      "cluster": "mainnet",
+      "feeBps": 10,
+      "deployer": "",
+      "timestamp": ""
+    }
+  }
+}

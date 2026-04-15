@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: neob2plus-db
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${DB_NAME:-neob2plus}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-postgres} -d ${DB_NAME:-neob2plus}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  gateway:
+    build: .
+    container_name: neob2plus-gateway
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      # Database connection (Wait-for-it pattern should be inside app if needed)
+      # DATABASE_URL should point to 'db' service name
+      - DATABASE_URL=host=db user=${DB_USER:-postgres} password=${DB_PASSWORD:-postgres} dbname=${DB_NAME:-neob2plus} port=5432 sslmode=disable
+      - APP_ENV=production
+      - SERVER_PORT=8080
+      - AUTHORIZER_PRIVATE_KEY=${AUTHORIZER_PRIVATE_KEY}
+      - WEBHOOK_SECRET=${WEBHOOK_SECRET}
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL}
+    volumes:
+      - ./config.json:/home/appuser/config.json # Keep config persistent/editable
+
+volumes:
+  postgres_data:
